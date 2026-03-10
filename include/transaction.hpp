@@ -1,17 +1,29 @@
 #ifndef TRANSACTION_HPP
 #define TRANSACTION_HPP
 
-#include <string>
 #include <ctime>
+#include <string>
 
 struct Transaction {
+    std::string type;
     std::string from;
     std::string to;
     double amount;
     std::time_t timestamp;
 
-    Transaction(const std::string& f, const std::string& t, double a)
-        : from(f), to(t), amount(a), timestamp(std::time(nullptr)) {}
+    Transaction()
+        : amount(0.0), timestamp(std::time(nullptr)) {}
+
+    Transaction(const std::string& transactionType,
+                const std::string& sender,
+                const std::string& recipient,
+                double value,
+                std::time_t occurredAt = std::time(nullptr))
+        : type(transactionType),
+          from(sender),
+          to(recipient),
+          amount(value),
+          timestamp(occurredAt) {}
 };
 
 #endif

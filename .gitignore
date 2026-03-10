@@ -3,3 +3,5 @@ build/
 *.out
 *.db
 .DS_Store
+.vscode/
+.idea/
