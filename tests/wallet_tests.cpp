@@ -14,7 +14,8 @@ void require(bool condition, const std::string& message) {
 int main() {
     const std::filesystem::path testDataDirectory =
         std::filesystem::temp_directory_path() / "ewallet-management-tests";
-    std::filesystem::remove_all(testDataDirectory);
+    std::error_code cleanupError;
+    std::filesystem::remove_all(testDataDirectory, cleanupError);
 
     try {
         WalletService wallet(testDataDirectory);
@@ -43,11 +44,11 @@ int main() {
         require(reloadedWallet.getTransactions().size() == 3, "transactions should persist");
     } catch (const std::exception& error) {
         std::cerr << "Test failure: " << error.what() << '\n';
-        std::filesystem::remove_all(testDataDirectory);
+        std::filesystem::remove_all(testDataDirectory, cleanupError);
         return 1;
     }
 
-    std::filesystem::remove_all(testDataDirectory);
+    std::filesystem::remove_all(testDataDirectory, cleanupError);
     std::cout << "All wallet tests passed.\n";
     return 0;
 }
