@@ -1,69 +1,70 @@
 # E-Wallet Management System
 
-A modular C++17 command-line wallet application with persistent storage, transaction history, and automated test coverage. The repository is structured to build cleanly and present well on GitHub.
+A clean and modular C++17 command-line application for managing digital wallets. This project lets users create accounts, handle transactions, and track balances with data stored persistently across runs. It’s designed with good structure, testability, and GitHub presentation in mind.
 
-## Highlights
+## 🚀 Highlights
 
-- Persistent wallet accounts with file-backed storage
-- User registration with email validation
-- Deposit, withdrawal, and transfer workflows
-- Transaction history persisted across runs
-- CMake-based build and test integration
-- GitHub Actions CI for automated verification
+* Create and manage wallet accounts with persistent storage
+* Simple user registration with email validation
+* Deposit, withdraw, and transfer funds بسهولة
+* Track transaction history even after restarting the app
+* Built using CMake for easy compilation and testing
+* Integrated GitHub Actions CI for automated checks
 
-## Project Structure
+## 📁 Project Structure
 
-```text
+```
 .
-├── include/      # Public headers
-├── src/          # Application and service implementation
-├── tests/        # Executable test suite
-├── data/         # Runtime data files
-└── .github/      # CI workflow
+├── include/      # Header files
+├── src/          # Core implementation
+├── tests/        # Test cases
+├── data/         # Stored runtime data
+└── .github/      # CI workflows
 ```
 
-## Build
+## ⚙️ Build
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ```
 
-## Run
+## ▶️ Run
 
 ```bash
 ./build/ewallet
 ```
 
-By default, runtime data is stored in `./data`.
+By default, all data is saved in the `./data` folder.
 
-## Test
+## 🧪 Run Tests
 
 ```bash
 ctest --test-dir build --output-on-failure
 ```
 
-## Supported Operations
+## ✅ What You Can Do
 
-- Register user accounts
-- Add wallet funds
-- Withdraw available balance
-- Transfer funds between users
-- View balances
-- List registered users
-- Inspect transaction history
+* Register new users
+* Add money to wallets
+* Withdraw funds
+* Transfer money between users
+* Check balances
+* View all users
+* Browse transaction history
 
-## GitHub Readiness
+## 🛠️ GitHub Ready
 
-- Portable CMake configuration
-- Separate reusable core target
-- Automated test target
-- CI workflow for Linux builds
-- Improved repository hygiene with `.gitignore`
+* Clean and portable CMake setup
+* Modular code structure with reusable components
+* Dedicated test suite
+* CI pipeline for Linux builds
+* Proper `.gitignore` and repo hygiene
 
-## Next Iterations
+## 🔮 What’s Next
 
-- JSON or SQLite persistence
-- Authentication and authorization
-- Currency conversion support
-- REST API or web frontend
+* Switch to JSON or SQLite for storage
+* Add authentication & user security
+* Support multiple currencies
+* Build a REST API or web interface
+
